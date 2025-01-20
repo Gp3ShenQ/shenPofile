@@ -39,6 +39,7 @@ const apiPaths: { [key: string]: string } = {
 
   // Tags 相關 API 端點
   // 取得所有標籤：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/tags
+  getAllDetailsGet: '/wp-json/wp/v2/tags',
 
   // 新增一個標籤：POST https://kuanjung.synology.me/wordpress/wp-json/wp/v2/tags
 

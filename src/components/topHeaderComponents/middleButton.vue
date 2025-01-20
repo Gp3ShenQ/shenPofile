@@ -2,7 +2,9 @@
   <div class="flex justify-center items-center h-full">
     <template v-for="(item, index) in aboutMeList" :key="index">
       <button
-        class="relative before:bottom-0 after:bottom-0 before:left-0 after:left-0 after:z-[-1] before:absolute after:absolute before:content-[''] after:content-[''] bg-transparent before:bg-[#E0E0E0] after:bg-[#E0E0E0] mx-2 border-none w-40 before:w-0 hover:before:w-full after:w-full h-14 before:h-0.5 after:h-0 hover:after:h-full font-bold text-base text-black text-center text-nowrap hover:text-[#9F4D95] transition-all before:transition-all after:transition-all duration-500 before:duration-300 after:duration-300 hover:after:delay-300 hover:delay-300 ease-linear before:ease-linear after:ease-linear cursor-pointer"
+        class="relative bg-transparent mx-2 border-none w-40 h-14 font-bold text-base text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer"
+        :class="{ buttonActive: item.title === clickButton }"
+        @click="changeButton(item.title)"
       >
         {{ item.title }}
       </button>
@@ -10,7 +12,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import {} from 'vue'
+import { ref } from 'vue'
+
+const clickButton = ref('')
+
+const changeButton = (title: string) => {
+  clickButton.value = title
+}
 
 const aboutMeList = [
   {
@@ -31,3 +39,68 @@ const aboutMeList = [
   },
 ]
 </script>
+
+<style scoped lang="scss">
+.buttonActive {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  width: 160px;
+  height: 60px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+}
+.buttonActive::before,
+.buttonActive::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000);
+}
+.buttonActive::before {
+  top: 0;
+  left: -100%;
+  animation: buttonActive-animation1 3s linear infinite;
+}
+.buttonActive::after {
+  bottom: 0;
+  right: -100%;
+  animation: buttonActive-animation1 3s linear infinite 0.75s;
+}
+@keyframes buttonActive-animation1 {
+  0% {
+    left: -100%;
+    right: 100%;
+  }
+  50% {
+    left: 100%;
+    right: -100%;
+  }
+  100% {
+    left: -100%;
+    right: 100%;
+  }
+}
+@keyframes buttonActive-animation2 {
+  0% {
+    top: -100%;
+    bottom: 100%;
+  }
+  50% {
+    top: 100%;
+    bottom: -100%;
+  }
+  100% {
+    top: -100%;
+    bottom: 100%;
+  }
+}
+</style>
