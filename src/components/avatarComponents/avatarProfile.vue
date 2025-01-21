@@ -18,10 +18,10 @@ import avatar from '@/components/avatarComponents/avatar.vue'
 import avatarResume from '@/components/avatarComponents/avatarResume.vue'
 
 type Props = {
-  githubIcon: string
+  githubIcon: string | undefined
 }
 
 const props = defineProps<Props>()
 
-const githubIcon = computed(() => props.githubIcon || ' ')
+const githubIcon = computed(() => props.githubIcon || '')
 </script>

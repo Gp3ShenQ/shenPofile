@@ -5,7 +5,7 @@
       <p class="font-black text-3xl text-black text-center">Here's who I am & what I do</p>
     </div>
     <div class="flex justify-center items-center gap-10 w-full h-1/5">
-      <div class="leading-10 button-gradient" @click="routerTo('Resume')">RESUME</div>
+      <div class="leading-10 button-gradient" @click="routerTo('resume')">RESUME</div>
       <div class="leading-10 button-gradient">PROJECTS</div>
     </div>
     <div class="px-12 pt-5 w-full h-2/5">

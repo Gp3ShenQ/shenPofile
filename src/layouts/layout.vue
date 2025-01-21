@@ -51,8 +51,6 @@ const getAllDetails = async () => {
 const getAllArticle = async () => {
   const _allArticle = await func_getArticlePosts()
   resume.value = _allArticle.filter((item: Article) => item.title.rendered.includes('簡歷'))
-  console.log('_allArticle', _allArticle)
-  console.log('resume', resume.value)
 }
 
 onMounted(async () => {

@@ -3,17 +3,17 @@ import layout from '@/layouts/layout.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/aboutMe',
     component: layout,
     children: [
       {
-        path: '',
+        path: '/aboutMe',
         name: 'aboutMe',
         component: () => import('@/pages/Home.vue'),
       },
       {
-        path: '/Resume',
-        name: 'Resume',
+        path: '/resume',
+        name: 'resume',
         component: () => import('@/pages/Resume.vue'),
       },
     ],

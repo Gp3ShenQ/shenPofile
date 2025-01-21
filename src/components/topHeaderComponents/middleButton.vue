@@ -3,7 +3,7 @@
     <template v-for="item in aboutMeList" :key="item.title">
       <button
         class="relative bg-transparent mx-2 border-none w-40 h-14 font-sm text-base text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer"
-        :class="{ buttonActive: item.name === topHeaderStatus }"
+        :class="{ buttonActive: item.name === resumeRoute }"
         @click="changeButton(item.name)"
       >
         {{ item.title }}
@@ -12,18 +12,20 @@
   </div>
 </template>
 <script setup lang="ts">
-import {} from 'vue'
-import { storeToRefs } from 'pinia'
-import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useCommonStore } from '@/store/commonStore'
 
+const route = useRoute()
 const router = useRouter()
-const commonStore = useCommonStore()
-const { topHeaderStatus } = storeToRefs(commonStore)
+
+const resumeRoute = computed(() => {
+  return route.path.replace('/', '')
+})
 
 const changeButton = (routerName: string) => {
-  topHeaderStatus.value = routerName
   router.push({ name: routerName })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 const aboutMeList = [
@@ -33,15 +35,15 @@ const aboutMeList = [
   },
   {
     title: 'Experience',
-    name: 'Resume',
+    name: 'resume',
   },
   {
     title: 'Project',
-    link: '',
+    name: '',
   },
   {
     title: 'Professional',
-    link: '',
+    name: '',
   },
 ]
 </script>
