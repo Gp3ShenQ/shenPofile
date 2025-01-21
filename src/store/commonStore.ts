@@ -4,5 +4,8 @@ export const useCommonStore = defineStore('commonStore', {
   state: () => ({
     topHeaderImage: [],
     allAvatarDetails: [],
+    avatarBackground: [],
+    resume: [],
+    icon: [],
   }),
 })

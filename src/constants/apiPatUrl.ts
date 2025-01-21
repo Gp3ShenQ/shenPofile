@@ -17,10 +17,12 @@ const apiPaths: { [key: string]: string } = {
 
   // Pages 相關 API 端點
   // 取得所有頁面：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/pages
+  getAllPagesGet: '/wp-json/wp/v2/pages',
 
   // 新增一個頁面：POST https://kuanjung.synology.me/wordpress/wp-json/wp/v2/pages
 
   // 取得指定頁面：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/pages/{id}
+  getPageIdGet: '/wp-json/wp/v2/pages/{id}',
 
   // 更新指定頁面：PUT https://kuanjung.synology.me/wordpress/wp-json/wp/v2/pages/{id}
 

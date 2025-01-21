@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center h-full">
     <template v-for="(item, index) in aboutMeList" :key="index">
       <button
-        class="relative bg-transparent mx-2 border-none w-40 h-14 font-bold text-base text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer"
+        class="relative bg-transparent mx-2 border-none w-40 h-14 font-sm text-base text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer"
         :class="{ buttonActive: item.title === clickButton }"
         @click="changeButton(item.title)"
       >
@@ -52,7 +52,6 @@ const aboutMeList = [
   cursor: pointer;
   overflow: hidden;
   font-size: 16px;
-  font-weight: bold;
   text-align: center;
   background-color: transparent;
   transition: 0.5s ease-in-out;

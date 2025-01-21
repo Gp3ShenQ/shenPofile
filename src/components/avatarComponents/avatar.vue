@@ -1,12 +1,15 @@
 <template>
-  <div class="relative bg-[#f5f5f5] shadow-[#00000059_0px_5px_15px] w-[220px] min-w-[250px] h-[300px] overflow-hidden group">
-    <div class="absolute flex justify-center items-center">
-      <img class="h-full" :src="avatarImage" />
+  <div class="top-0 left-0 absolute flex flex-col justify-start items-center gap-5 bg-main3 pt-20 w-full h-full">
+    <div class="rounded-full w-[200px] h-[200px] overflow-hidden">
+      <img class="-mt-5" :src="avatarImage" />
     </div>
-    <div class="group-hover:h-28 bottom-0 absolute bg-[#00000080] shadow-[0_3px_10px_#00000033] p-2.5 w-full h-10 text-white transition-height duration-500 overflow-hidden ease-in-out">
-      <label class="font-bold">{{ avatarTitle }}</label>
-      <p class="mt-[11px] text-sm text-wrap">{{ avatarProfile }}</p>
+    <div>
+      <p class="font-black text-black text-center text-xl">{{ avatarTitle }}</p>
+      <p class="mt-10 text-black text-center">Front-End</p>
     </div>
+  </div>
+  <div class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]">
+    <img class="w-9 h-9 cursor-pointer" :src="avatarGitIcon" />
   </div>
 </template>
 
@@ -24,6 +27,14 @@ type DetailsArray = {
   description: string
 }
 
+type Props = {
+  avatarGitIcon: string
+}
+
+const props = defineProps<Props>()
+
+const avatarGitIcon = computed(() => props.avatarGitIcon || ' ')
+
 const avatarTitle = computed(() => {
   const _detailsArray: DetailsArray[] = Object.values(allAvatarDetails.value)
   const _foundItem = _detailsArray.find((item: DetailsArray) => item.slug.includes('avatar-name'))
@@ -36,5 +47,5 @@ const avatarProfile = computed(() => {
   return _foundItem ? _foundItem.description : ''
 })
 
-const avatarImage = computed(() => topHeaderImage?.value.find((item: string) => item.includes('avatar')))
+const avatarImage = computed(() => topHeaderImage?.value.find((item: string) => item.includes('avatar_shen')))
 </script>

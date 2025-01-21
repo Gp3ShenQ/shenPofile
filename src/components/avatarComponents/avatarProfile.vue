@@ -1,11 +1,27 @@
 <template>
-  <div class="flex justify-around items-center bg-red-500 px-10 py-20 w-full h-auto">
-    <avatar />
+  <div class="z-10 flex justify-center items-center">
+    <div class="relative min-w-[900px] h-[500px]">
+      <div class="relative shadow-[-30px_20px_20px_#00000020] w-1/3 h-full">
+        <avatar :avatarGitIcon="avatarGitIcon" />
+      </div>
+      <div class="top-0 right-0 absolute bg-white shadow-[30px_-20px_50px_#00000010] w-2/3 h-full">
+        <avatarResume />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {} from 'vue'
+import { computed } from 'vue'
 
 import avatar from '@/components/avatarComponents/avatar.vue'
+import avatarResume from '@/components/avatarComponents/avatarResume.vue'
+
+type Props = {
+  avatarGitIcon: string
+}
+
+const props = defineProps<Props>()
+
+const avatarGitIcon = computed(() => props.avatarGitIcon || ' ')
 </script>
