@@ -25,7 +25,7 @@
 import { computed } from 'vue'
 
 type Props = {
-  avatarGitIcon: string
+  avatarGitIcon: string | undefined
 }
 
 const props = defineProps<Props>()

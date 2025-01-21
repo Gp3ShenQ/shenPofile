@@ -21,14 +21,8 @@ import { useCommonStore } from '@/store/commonStore'
 const commonStore = useCommonStore()
 const { topHeaderImage, allAvatarDetails } = storeToRefs(commonStore)
 
-type DetailsArray = {
-  name: string
-  slug: string
-  description: string
-}
-
 type Props = {
-  avatarGitIcon: string
+  avatarGitIcon: string | undefined
 }
 
 const props = defineProps<Props>()
@@ -36,15 +30,9 @@ const props = defineProps<Props>()
 const avatarGitIcon = computed(() => props.avatarGitIcon || ' ')
 
 const avatarTitle = computed(() => {
-  const _detailsArray: DetailsArray[] = Object.values(allAvatarDetails.value)
-  const _foundItem = _detailsArray.find((item: DetailsArray) => item.slug.includes('avatar-name'))
+  const _detailsArray = Object.values(allAvatarDetails.value)
+  const _foundItem = _detailsArray.find((item) => item.slug.includes('avatar-name'))
   return _foundItem ? _foundItem.name : ''
-})
-
-const avatarProfile = computed(() => {
-  const _detailsArray: DetailsArray[] = Object.values(allAvatarDetails.value)
-  const _foundItem = _detailsArray.find((item: DetailsArray) => item.description)
-  return _foundItem ? _foundItem.description : ''
 })
 
 const avatarImage = computed(() => topHeaderImage?.value.find((item: string) => item.includes('avatar_shen')))
