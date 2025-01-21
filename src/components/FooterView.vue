@@ -15,20 +15,17 @@
       </div>
       <div class="flex flex-col justify-center gap-2">
         <p class="font-black">Follow</p>
-        <img class="w-6 h-6 cursor-pointer" :src="avatarGitIcon" alt="" />
+        <img class="w-6 h-6 cursor-pointer" :src="githubIcon" alt="" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import {} from 'vue'
+import { storeToRefs } from 'pinia'
+import { useCommonStore } from '@/store/commonStore'
 
-type Props = {
-  avatarGitIcon: string | undefined
-}
-
-const props = defineProps<Props>()
-
-const avatarGitIcon = computed(() => props.avatarGitIcon || ' ')
+const commonStore = useCommonStore()
+const { githubIcon } = storeToRefs(commonStore)
 </script>

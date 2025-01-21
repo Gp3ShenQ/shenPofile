@@ -1,5 +1,5 @@
 <template>
-  <div class="top-0 left-0 z-50 fixed bg-white w-full h-36">
+  <div class="top-0 left-0 z-50 fixed bg-white w-full h-[140px]">
     <div class="flex justify-around items-center w-16 w-full h-full">
       <img class="w-16 h-16" :src="titleImage" alt="title" />
       <middleButton />

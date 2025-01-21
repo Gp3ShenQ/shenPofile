@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]">
-    <img class="w-9 h-9 cursor-pointer" :src="avatarGitIcon" />
+    <img class="w-9 h-9 cursor-pointer" :src="githubIcon" />
   </div>
 </template>
 
@@ -22,12 +22,12 @@ const commonStore = useCommonStore()
 const { topHeaderImage, allAvatarDetails } = storeToRefs(commonStore)
 
 type Props = {
-  avatarGitIcon: string | undefined
+  githubIcon: string | undefined
 }
 
 const props = defineProps<Props>()
 
-const avatarGitIcon = computed(() => props.avatarGitIcon || ' ')
+const githubIcon = computed(() => props.githubIcon || ' ')
 
 const avatarTitle = computed(() => {
   const _detailsArray = Object.values(allAvatarDetails.value)

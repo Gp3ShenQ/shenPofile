@@ -5,7 +5,7 @@
       <p class="font-black text-3xl text-black text-center">Here's who I am & what I do</p>
     </div>
     <div class="flex justify-center items-center gap-10 w-full h-1/5">
-      <div class="leading-10 button-gradient">RESUME</div>
+      <div class="leading-10 button-gradient" @click="routerTo('Resume')">RESUME</div>
       <div class="leading-10 button-gradient">PROJECTS</div>
     </div>
     <div class="px-12 pt-5 w-full h-2/5">
@@ -17,15 +17,22 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
+import { useRouter } from 'vue-router'
 import { useCommonStore } from '@/store/commonStore'
 
+const router = useRouter()
 const commonStore = useCommonStore()
-const { resume } = storeToRefs(commonStore)
+const { resume, topHeaderStatus } = storeToRefs(commonStore)
 
 const avatarResume = computed(() => {
   const foundItem = resume.value.find((item: any) => item.content && item.content.rendered)
   return foundItem ? foundItem.content.rendered : ''
 })
+
+const routerTo = (routerName: string) => {
+  topHeaderStatus.value = routerName
+  router.push({ name: routerName })
+}
 </script>
 
 <style scoped lang="scss">

@@ -5,6 +5,18 @@ const routes = [
   {
     path: '/',
     component: layout,
+    children: [
+      {
+        path: '',
+        name: 'aboutMe',
+        component: () => import('@/pages/Home.vue'),
+      },
+      {
+        path: '/Resume',
+        name: 'Resume',
+        component: () => import('@/pages/Resume.vue'),
+      },
+    ],
   },
 ]
 
