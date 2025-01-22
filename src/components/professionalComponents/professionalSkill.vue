@@ -2,7 +2,7 @@
   <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Skill</p>
   <div class="w-[600px]">
     <template v-for="(item, index) in skill" :key="item.skillType">
-      <div class="w-full flex justify-start items-center pl-10" :class="{ 'justify-start': isOdd(index), 'justify-end': isEven(index), 'pl-10': isOdd(index), '-mt-32': isEven(index) }">
+      <div class="w-full flex justify-start items-center pl-10" :class="{ 'justify-start': isOdd(index), 'justify-end': isEven(index), 'pl-10': isOdd(index), '-mt-32': isEven(index), 'mb-20': isLastData(index) }">
         <div class="flex relative justify-center flex-col items-center bg-white p-5 shadow-[0_10px_20px_#00000050] w-[300px] min-h-[175px]" :class="{ 'mt-10 ': isFirstOdd(index), '-mt-6': notFirstOdd(index) }">
           <div class="flex flex-col text-center py-2 text-2xl px-4 w-full h-full text-red-600 font-black border-b-[3px]">
             {{ item.skillType }}
@@ -52,5 +52,9 @@ const isFirstOdd = (index: number) => {
 
 const notFirstOdd = (index: number) => {
   return index / 2 >= 1
+}
+
+const isLastData = (index: number) => {
+  return index === skill.length - 1
 }
 </script>

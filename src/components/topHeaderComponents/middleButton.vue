@@ -40,7 +40,7 @@ const aboutMeList = [
   },
   {
     title: 'Project',
-    name: '',
+    name: 'project',
   },
   {
     title: 'Professional',
