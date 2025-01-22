@@ -21,7 +21,7 @@ const router = useRouter()
 const resumeRoute = computed(() => {
   let _pathCheck = route.path.replace('/', '')
   if (_pathCheck === '') return 'aboutMe'
-  return route.path.replace('/', '')
+  return route.path.replace('/#/', '')
 })
 
 const changeButton = (routerName: string) => {

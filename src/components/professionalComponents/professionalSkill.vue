@@ -2,13 +2,13 @@
   <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Skill</p>
   <div class="w-[600px]">
     <template v-for="(item, index) in skill" :key="item.skillType">
-      <div class="w-full flex justify-start items-center pl-10" :class="{ 'justify-start': isOdd(index), 'justify-end': isEven(index), 'pl-10': isOdd(index), '-mt-32': isEven(index), 'mb-20': isLastData(index) }">
-        <div class="flex relative justify-center flex-col items-center bg-white p-5 shadow-[0_10px_20px_#00000050] w-[300px] min-h-[175px]" :class="{ 'mt-10 ': isFirstOdd(index), '-mt-6': notFirstOdd(index) }">
-          <div class="flex flex-col text-center py-2 text-2xl px-4 w-full h-full text-red-600 font-black border-b-[3px]">
+      <div class="flex justify-start items-center pl-10 w-full" :class="{ 'justify-start': isOdd(index), 'justify-end': isEven(index), 'pl-10': isOdd(index), '-mt-32': isEven(index), 'mb-20': isLastData(index) }">
+        <div class="relative flex flex-col justify-center items-center bg-white shadow-[0_10px_20px_#00000050] p-5 w-[300px] min-h-[175px]" :class="{ 'mt-10 ': isFirstOdd(index), '-mt-6': notFirstOdd(index) }">
+          <div class="flex flex-col px-4 py-2 border-b-[3px] w-full h-full font-black text-2xl text-center text-red-600">
             {{ item.skillType }}
           </div>
           <template v-for="skill in item.skillList" :key="skill.name">
-            <div class="flex w-full mt-2">◎ {{ skill.name }}</div>
+            <p class="flex mt-2 w-full text-black">◎ {{ skill.name }}</p>
           </template>
         </div>
       </div>

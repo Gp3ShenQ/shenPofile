@@ -1,7 +1,7 @@
 <template>
   <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Experience</p>
   <template v-for="item in job" :key="item.position">
-    <div class="relative flex justify-center items-center bg-white shadow-[0_10px_20px_#00000050] mt-10 w-[600px] h-[350px]">
+    <div class="relative flex justify-center items-center bg-white shadow-[0_10px_20px_#00000050] mt-10 py-5 w-[600px] h-auto min-h-[350px]">
       <div class="flex flex-col justify-center items-center px-4 w-1/3 h-full">
         <p class="font-black text-blue-700 text-center">{{ item.time }}</p>
         <p class="my-5 font-black text-2xl text-center text-red-600">{{ item.position }}</p>
@@ -11,8 +11,8 @@
       <div class="w-2/3">
         <template v-for="job in item.job" :key="job.name">
           <div class="my-2 w-full h-full">
-            <p class="font-black text-black text-left text-red-600">{{ job.name }} :</p>
-            <p class="px-5 text-black text-left text-xs">{{ job.innerDescription }}</p>
+            <p class="font-black text-left text-red-600">{{ job.name }} :</p>
+            <p class="px-5 text-base text-black text-left">{{ job.innerDescription }}</p>
           </div>
         </template>
       </div>
