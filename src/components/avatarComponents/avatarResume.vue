@@ -22,7 +22,7 @@ import { useCommonStore } from '@/store/commonStore'
 
 const router = useRouter()
 const commonStore = useCommonStore()
-const { resume, topHeaderStatus } = storeToRefs(commonStore)
+const { resume } = storeToRefs(commonStore)
 
 const avatarResume = computed(() => {
   const foundItem = resume.value.find((item: any) => item.content && item.content.rendered)
@@ -30,8 +30,8 @@ const avatarResume = computed(() => {
 })
 
 const routerTo = (routerName: string) => {
-  topHeaderStatus.value = routerName
   router.push({ name: routerName })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 

@@ -18,12 +18,11 @@ import middleButton from '@/components/topHeaderComponents/middleButton.vue'
 
 const router = useRouter()
 const commonStore = useCommonStore()
-const { topHeaderImage, topHeaderStatus } = storeToRefs(commonStore)
+const { topHeaderImage } = storeToRefs(commonStore)
 
 const titleImage = computed(() => topHeaderImage?.value.find((item: string) => item.includes('84x84')))
 
 const routerTo = (routerName: string) => {
-  topHeaderStatus.value = routerName
   router.push({ name: routerName })
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }

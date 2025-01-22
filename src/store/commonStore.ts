@@ -25,6 +25,5 @@ export const useCommonStore = defineStore('commonStore', {
     avatarBackground: [] as string[],
     resume: [] as Resume[],
     githubIcon: '' as string,
-    topHeaderStatus: 'aboutMe' as string,
   }),
 })
