@@ -1,6 +1,11 @@
 <template>
   <TopHeaderView />
-  <router-view />
+
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 
   <FooterView />
 </template>
@@ -60,4 +65,27 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-enter-active {
+  transition: 1s;
+}
+
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: 0.3s;
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+</style>
