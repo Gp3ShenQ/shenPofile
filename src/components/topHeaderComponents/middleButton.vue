@@ -14,12 +14,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useCommonStore } from '@/store/commonStore'
 
 const route = useRoute()
 const router = useRouter()
 
 const resumeRoute = computed(() => {
+  let _pathCheck = route.path.replace('/', '')
+  if (_pathCheck === '') return 'aboutMe'
   return route.path.replace('/', '')
 })
 
