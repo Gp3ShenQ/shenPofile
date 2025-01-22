@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/pages/Home.vue'
+import Resume from '@/pages/Resume.vue'
 import layout from '@/layouts/layout.vue'
+import Professional from '@/pages/Professional.vue'
 
 const routes = [
   {
@@ -9,12 +12,17 @@ const routes = [
       {
         path: '/',
         name: 'aboutMe',
-        component: () => import('@/pages/Home.vue'),
+        component: Home,
       },
       {
         path: '/resume',
         name: 'resume',
-        component: () => import('@/pages/Resume.vue'),
+        component: Resume,
+      },
+      {
+        path: '/professional',
+        name: 'professional',
+        component: Professional,
       },
     ],
   },

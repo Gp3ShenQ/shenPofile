@@ -44,7 +44,7 @@ const aboutMeList = [
   },
   {
     title: 'Professional',
-    name: '',
+    name: 'professional',
   },
 ]
 </script>
