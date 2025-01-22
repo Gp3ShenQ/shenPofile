@@ -15,7 +15,9 @@
       </div>
       <div class="flex flex-col justify-center gap-2">
         <p class="font-black">Follow</p>
-        <img class="w-6 h-6 cursor-pointer" :src="githubIcon" alt="" />
+        <a href="https://github.com/Gp3ShenQ" target="_blank" rel="noopener noreferrer">
+          <img class="w-6 h-6 cursor-pointer" :src="githubIcon" alt="" />
+        </a>
       </div>
     </div>
   </div>

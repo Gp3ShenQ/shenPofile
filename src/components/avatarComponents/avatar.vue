@@ -8,9 +8,9 @@
       <p class="mt-10 text-black text-center">Front-End</p>
     </div>
   </div>
-  <div class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]">
+  <a class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]" href="https://github.com/Gp3ShenQ" target="_blank" rel="noopener noreferrer">
     <img class="w-9 h-9 cursor-pointer" :src="githubIcon" />
-  </div>
+  </a>
 </template>
 
 <script setup lang="ts">
