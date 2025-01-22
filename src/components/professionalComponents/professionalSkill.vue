@@ -4,7 +4,7 @@
     <template v-for="(item, index) in skill" :key="index">
       <template v-if="index % 2 === 0">
         <div class="w-full flex justify-start items-center pl-10">
-          <div class="flex relative justify-center flex-col items-center bg-white p-5 shadow-[0_10px_20px_#00000050] mt-10 w-[300px] min-h-[175px]" :class="{ '-mt-4': index / 2 >= 1 }">
+          <div class="flex relative justify-center flex-col items-center bg-white p-5 shadow-[0_10px_20px_#00000050] w-[300px] min-h-[175px]" :class="{ 'mt-10 ': index === 0, '-mt-6': index / 2 >= 1 }">
             <div class="flex flex-col text-center py-2 text-2xl px-4 w-full h-full text-red-600 font-black border-b-[3px]">
               {{ item.skillType }}
             </div>
