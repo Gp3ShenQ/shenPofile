@@ -1,5 +1,5 @@
 <template>
-  <div class="top-0 left-0 z-10 fixed bg-white w-full h-[140px]">
+  <div class="top-0 left-0 z-20 fixed bg-white w-full h-[140px]">
     <div class="flex justify-around items-center w-16 w-full h-full">
       <div @click="routerTo('aboutMe')">
         <img class="w-16 h-16 cursor-pointer" :src="titleImage" alt="title" />
@@ -12,6 +12,7 @@
         <svg class="w-8 h-8 cursor-pointer" @click="openFloatingArea('sendEmail')">
           <use class="fill-black" href="#send_email_icon"></use>
         </svg>
+        <smallMiddleButton />
       </div>
     </div>
   </div>
@@ -23,6 +24,7 @@ import { useRouter } from 'vue-router'
 import { useCommonStore } from '@/store/commonStore'
 
 import middleButton from '@/components/topHeaderComponents/middleButton.vue'
+import smallMiddleButton from '@/components/topHeaderComponents/smallMiddleButton.vue'
 
 const router = useRouter()
 const commonStore = useCommonStore()

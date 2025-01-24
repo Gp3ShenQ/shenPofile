@@ -1,14 +1,15 @@
 <template>
   <template v-if="sendEmailStatus">
-    <div class="top-0 left-0 z-20 fixed bg-black opacity-40 w-full h-full" @click="closeSendEmail"></div>
-    <div class="top-1/2 left-1/2 z-20 fixed bg-white rounded-[30px] w-[600px] h-[400px] -translate-x-1/2 -translate-y-1/2 overflow-hidden">
-      <div class="flex items-center bg-[#DADADA] pl-4 w-full h-10">
-        <template v-for="item in dot" :key="item">
-          <div class="mx-2 rounded-full w-3 h-3" :style="{ backgroundColor: item }"></div>
-        </template>
-        <p class="pl-2 font-black text-[#63768D] text-black page-title-font">Message To MyMail</p>
+    <div class="top-0 left-0 z-20 fixed flex justify-center items-center bg-black/40 p-5 w-full h-full" @click="closeSendEmail">
+      <div class="bg-white rounded-[30px] w-full max-w-[600px] overflow-hidden">
+        <div class="flex items-center bg-[#DADADA] pl-4 w-full h-10">
+          <template v-for="item in dot" :key="item">
+            <div class="mx-2 rounded-full w-3 h-3" :style="{ backgroundColor: item }"></div>
+          </template>
+          <p class="pl-2 font-black text-[#63768D] text-black page-title-font">Message To MyMail</p>
+        </div>
+        <enterMessageDetails @closeSendEmail="closeSendEmail" />
       </div>
-      <enterMessageDetails @closeSendEmail="closeSendEmail" />
     </div>
   </template>
 </template>

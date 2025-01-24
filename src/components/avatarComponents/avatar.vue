@@ -1,14 +1,18 @@
 <template>
-  <div class="top-0 left-0 absolute flex flex-col justify-start items-center gap-5 bg-main3 pt-20 w-full h-full">
-    <div class="rounded-full w-[200px] h-[200px] overflow-hidden">
-      <img class="-mt-5" :src="avatarImage" />
+  <div class="flex flex-col justify-center items-center w-full h-full">
+    <div class="flex flex-col justify-start items-center gap-5 bg-main3 px-4 py-10 w-full h-full">
+      <div class="relative rounded-full w-full max-w-[200px] overflow-hidden">
+        <div class="pb-[100%] w-full"></div>
+        <img class="top-[50%] left-[50%] absolute translate-x-[-50%] translate-y-[-50%]" :src="avatarImage" />
+      </div>
+      <div>
+        <p class="font-black text-black text-center text-xl">{{ avatarTitle }}</p>
+        <p class="mt-10 text-black text-center page-title-font">Front-End</p>
+      </div>
     </div>
-    <div>
-      <p class="font-black text-black text-center text-xl">{{ avatarTitle }}</p>
-      <p class="mt-10 text-black text-center page-title-font">Front-End</p>
-    </div>
+
+    <avatarBottomButton />
   </div>
-  <avatarBottomButton />
 </template>
 
 <script setup lang="ts">

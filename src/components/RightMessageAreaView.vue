@@ -2,7 +2,7 @@
   <template v-if="rightMessageStatus">
     <div class="top-0 left-0 z-20 fixed bg-black opacity-40 w-full h-full" @click="closeRightArea"></div>
   </template>
-  <div class="top-0 z-30 fixed bg-main1 px-5 pt-10 w-[500px] h-full transition-all duration-1000" :class="{ 'right-0': rightMessageStatus, '-right-full': !rightMessageStatus }">
+  <div class="top-0 z-30 fixed bg-main1 px-5 pt-10 h-full transition-all duration-1000" :class="{ 'right-0': rightMessageStatus, '-right-[200%]': !rightMessageStatus }">
     <div class="flex flex-col gap-5 w-full h-auto">
       <div>
         <p class="text-black">名稱<span class="text-red-600"> *</span></p>

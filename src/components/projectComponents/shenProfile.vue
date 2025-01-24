@@ -1,6 +1,6 @@
 <template>
-  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left page-title-font">Profile - Project</p>
-  <div class="w-[600px]"></div>
+  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-full max-w-[600px] text-3xl text-black text-left page-title-font">Profile - Project</p>
+  <div class="w-full max-w-[600px]"></div>
 </template>
 
 <script setup lang="ts">

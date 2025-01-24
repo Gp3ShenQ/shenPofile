@@ -1,10 +1,6 @@
 <template>
-  <div class="flex justify-between bg-main3 w-full h-[140px]">
-    <div class="flex flex-col justify-center w-1/4 text-black text-center">
-      <p class="page-title-font">© 2025 by Amos .</p>
-    </div>
-
-    <div class="flex justify-around w-2/4 text-black text-center">
+  <div class="flex max-l:flex-col justify-between max-l:justify-around max-l:items-center bg-main3 w-full max-l:w-full h-[140px]">
+    <div class="flex justify-around w-2/4 max-l:w-full text-black text-center">
       <div class="flex flex-col justify-center gap-2">
         <p class="font-black page-title-font">Call</p>
         <p class="page-title-font">0963-656-380</p>
@@ -19,6 +15,9 @@
           <img class="w-6 h-6 cursor-pointer" :src="githubIcon" alt="" />
         </a>
       </div>
+    </div>
+    <div class="flex flex-col justify-center pr-4 w-auto text-black text-center">
+      <p class="page-title-font">© 2025 by Amos .</p>
     </div>
   </div>
 </template>

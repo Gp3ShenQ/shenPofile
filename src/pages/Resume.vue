@@ -3,7 +3,7 @@
     <div>
       <p class="mt-10 font-black text-5xl text-black text-center page-title-font">Resume</p>
     </div>
-    <div class="flex flex-col justify-start items-center w-full h-full">
+    <div class="flex flex-col justify-start items-center px-4 w-full h-full">
       <experience />
       <education />
     </div>

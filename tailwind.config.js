@@ -10,6 +10,13 @@ export default {
         main4: '#EFE5E0',
         main5: '#EEE2DD',
       },
+      screens: {
+        'max-sm': { max: '639px' }, // 小於 640px
+        'max-md': { max: '767px' }, // 小於 768px
+        'max-l': { max: '900px' }, // 小於 768px
+        'max-lg': { max: '1023px' }, // 小於 1024px
+        'max-xl': { max: '1279px' }, // 小於 1280px
+      },
     },
   },
   plugins: [],
