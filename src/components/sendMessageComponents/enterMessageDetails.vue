@@ -1,7 +1,7 @@
 <template>
   <div class="bg-main2 px-10 py-4 w-full h-full">
     <div class="mb-2">
-      <p class="font-black text-[#63768D]">E-Mail</p>
+      <p class="font-black text-[#63768D] page-title-font">E-Mail</p>
       <input class="bg-main3 py-3 pl-5 rounded-[30px] w-full h-full text-black focus:outline-none" v-model="enterEmail" type="text" placeholder="輸入您的E-Mail" />
     </div>
     <div class="mb-2">
@@ -23,40 +23,67 @@ import { ref } from 'vue'
 import Swal from 'sweetalert2'
 import emailjs from 'emailjs-com'
 
+type Emit = {
+  (e: 'closeSendEmail'): void
+}
+
+const emit = defineEmits<Emit>()
+
 const enterEmail = ref('')
 const enterSubject = ref('')
 const enterMessage = ref('')
 
-const sendEmail = () => {
+const closeSendEmail = () => {
+  enterEmail.value = ''
+  enterSubject.value = ''
+  enterMessage.value = ''
+  emit('closeSendEmail')
+}
+
+const checkDetails = () => {
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ // 驗證郵件的正則表達式
 
+  if (!emailPattern.test(enterEmail.value)) {
+    Swal.fire({ title: 'E-Mail 格式錯誤', text: '請輸入有效的E-Mail。' })
+    return false
+  }
+
+  if (enterSubject.value === '') {
+    Swal.fire({ title: '請輸入主旨' })
+    return false
+  }
+
+  if (enterMessage.value === '') {
+    Swal.fire({ title: '想跟我說什麼呢?', text: '記得輸入留言內容。' })
+    return false
+  }
+  return true
+}
+
+const sendEmail = () => {
   const templateParams = {
     from_email: enterEmail.value,
     subject: enterSubject.value,
     message: enterMessage.value,
   }
 
-  if (!emailPattern.test(enterEmail.value)) {
-    Swal.fire({ title: 'E-Mail 格式錯誤', text: '請輸入有效的E-Mail。' })
-    return
-  }
-
-  if (enterSubject.value === '') {
-    Swal.fire({ title: '請輸入主旨' })
-    return
-  }
-
-  if (enterMessage.value === '') {
-    Swal.fire({ title: '想跟我說什麼呢?', text: '記得輸入留言內容。' })
-    return
-  }
+  const _result = checkDetails()
+  if (!_result) return
 
   emailjs.send('service_q21ail4', 'template_2n8fk8n', templateParams, 'zYRSmkbNARXwgwRg0').then(
     (response) => {
-      console.log('郵件寄送成功！', response.status, response.text)
+      Swal.fire({
+        title: '郵件寄送成功！',
+        icon: 'success',
+      }).then(() => {
+        closeSendEmail()
+      })
     },
     (error) => {
-      console.log('郵件寄送失敗...', error)
+      Swal.fire({
+        title: '郵件寄送失敗！',
+        icon: 'error',
+      })
     },
   )
 }

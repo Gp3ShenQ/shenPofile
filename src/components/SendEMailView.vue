@@ -6,9 +6,9 @@
         <template v-for="item in dot" :key="item">
           <div class="mx-2 rounded-full w-3 h-3" :style="{ backgroundColor: item }"></div>
         </template>
-        <p class="pl-2 font-black text-[#63768D] text-black">Message To MyMail</p>
+        <p class="pl-2 font-black text-[#63768D] text-black page-title-font">Message To MyMail</p>
       </div>
-      <enterMessageDetails />
+      <enterMessageDetails @closeSendEmail="closeSendEmail" />
     </div>
   </template>
 </template>
