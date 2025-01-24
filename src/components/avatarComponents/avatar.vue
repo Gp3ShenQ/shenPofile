@@ -8,9 +8,7 @@
       <p class="mt-10 text-black text-center page-title-font">Front-End</p>
     </div>
   </div>
-  <a class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]" href="https://github.com/Gp3ShenQ" target="_blank" rel="noopener noreferrer">
-    <img class="w-9 h-9 cursor-pointer" :src="githubIcon" />
-  </a>
+  <avatarBottomButton />
 </template>
 
 <script setup lang="ts">
@@ -18,16 +16,10 @@ import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useCommonStore } from '@/store/commonStore'
 
+import avatarBottomButton from '@/components/avatarComponents/avatarBottomButton.vue'
+
 const commonStore = useCommonStore()
 const { topHeaderImage, allAvatarDetails } = storeToRefs(commonStore)
-
-type Props = {
-  githubIcon: string | undefined
-}
-
-const props = defineProps<Props>()
-
-const githubIcon = computed(() => props.githubIcon || ' ')
 
 const avatarTitle = computed(() => {
   const _detailsArray = Object.values(allAvatarDetails.value)

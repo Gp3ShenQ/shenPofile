@@ -21,5 +21,6 @@ export const useCommonStore = defineStore('commonStore', {
     githubIcon: '' as string,
     rightMessageStatus: false as boolean,
     sendEmailStatus: false as boolean,
+    tgQRCode: '' as string,
   }),
 })
