@@ -1,23 +1,33 @@
 <template>
-  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Skill</p>
-  <div class="w-[600px]">
-    <template v-for="(item, index) in skill" :key="item.skillType">
-      <div class="flex justify-start items-center pl-10 w-full" :class="{ 'justify-start': isOdd(index), 'justify-end': isEven(index), 'pl-10': isOdd(index), '-mt-32': isEven(index), 'mb-20': isLastData(index) }">
-        <div class="relative flex flex-col justify-center items-center bg-white shadow-[0_10px_20px_#00000050] p-5 w-[300px] min-h-[175px]" :class="{ 'mt-10 ': isFirstOdd(index), '-mt-6': notFirstOdd(index) }">
-          <div class="flex flex-col px-4 py-2 border-b-[3px] w-full h-full font-black text-2xl text-center text-red-600">
-            {{ item.skillType }}
+  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left page-title-font">Skill</p>
+  <div class="mt-5 w-[600px] h-[800px]">
+    <div id="scene" ref="scene" class="relative w-full h-full">
+      <template v-for="(item, index) in skill" :key="item.skillType">
+        <div class="w-full h-full" :data-depth="positionAll(index)">
+          <div class="grid grid-cols-2 grid-rows-10 w-full h-full" data-depth="0.1">
+            <div :class="{ 'col-start-2 row-start-4': isEven(index), 'row-start-8': isLastData(index), 'row-start-6': notFirstOdd(index) }">
+              <div class="relative flex flex-col justify-center items-center bg-white shadow-[0_10px_20px_#00000050] p-5 w-[300px] min-h-[175px]">
+                <div class="flex flex-col px-4 py-2 border-b-[3px] w-full h-full font-black text-2xl text-center text-red-600">
+                  {{ item.skillType }}
+                </div>
+                <template v-for="skill in item.skillList" :key="skill.name">
+                  <p class="flex mt-2 w-full text-black">◎ {{ skill.name }}</p>
+                </template>
+              </div>
+            </div>
           </div>
-          <template v-for="skill in item.skillList" :key="skill.name">
-            <p class="flex mt-2 w-full text-black">◎ {{ skill.name }}</p>
-          </template>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {} from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
+
+import Parallax from 'parallax-js'
+
+const scene = ref<HTMLElement | null>(null)
 
 const skill = [
   {
@@ -38,6 +48,14 @@ const skill = [
   },
 ]
 
+const positionAll = (index: number) => {
+  if (isOdd(index)) {
+    return Math.random() * 0.15
+  } else {
+    return Math.random() * -0.15
+  }
+}
+
 const isOdd = (index: number) => {
   return index % 2 === 0
 }
@@ -57,4 +75,12 @@ const notFirstOdd = (index: number) => {
 const isLastData = (index: number) => {
   return index === skill.length - 1
 }
+
+onMounted(() => {
+  nextTick(() => {
+    new Parallax(scene.value as HTMLElement, {
+      relativeInput: true,
+    })
+  })
+})
 </script>

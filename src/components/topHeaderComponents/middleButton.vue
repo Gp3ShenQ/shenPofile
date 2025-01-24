@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center h-full">
     <template v-for="item in aboutMeList" :key="item.title">
       <button
-        class="relative bg-transparent mx-2 border-none w-40 h-14 font-sm text-base text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer"
+        class="relative bg-transparent mx-2 border-none w-40 h-14 text-3xl text-black text-center text-nowrap hover:text-[#D94600] transition-all duration-500 hover:delay-300 ease-linear cursor-pointer page-title-font"
         :class="{ buttonActive: item.name === resumeRoute }"
         @click="changeButton(item.name)"
       >
@@ -60,7 +60,7 @@ const aboutMeList = [
   border: none;
   cursor: pointer;
   overflow: hidden;
-  font-size: 16px;
+  // font-size: 30px;
   text-align: center;
   background-color: transparent;
   transition: 0.5s ease-in-out;
