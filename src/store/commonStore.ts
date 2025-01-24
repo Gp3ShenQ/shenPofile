@@ -12,12 +12,6 @@ type Resume = {
   }
 }
 
-type TopHeaderImage = {
-  guid: {
-    rendered: string
-  }
-}
-
 export const useCommonStore = defineStore('commonStore', {
   state: () => ({
     topHeaderImage: [] as string[],

@@ -8,16 +8,23 @@
   </router-view>
 
   <FooterView />
+
+  <RightMessageAreaView />
+  <SendEMailView />
+  <SvgIcon />
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useCommonStore } from '@/store/commonStore'
 import { useArticleApi } from '@/utils/useAPI/useAPIArticle'
 
+import SvgIcon from '@/assets/SvgIcon.vue'
 import FooterView from '@/components/FooterView.vue'
+import SendEMailView from '@/components/SendEMailView.vue'
 import TopHeaderView from '@/components/TopHeaderView.vue'
+import RightMessageAreaView from '@/components/RightMessageAreaView.vue'
 
 const commonStore = useCommonStore()
 const { func_getMediaGet, func_getAllDetailsGet, func_getArticlePosts } = useArticleApi()
@@ -38,8 +45,6 @@ type Article = {
     rendered: string
   }
 }
-
-const icon = ref<string[]>([])
 
 const getTopHeaderImage = async () => {
   const _allImage = await func_getMediaGet()

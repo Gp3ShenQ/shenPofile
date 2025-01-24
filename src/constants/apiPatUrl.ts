@@ -55,6 +55,7 @@ const apiPaths: { [key: string]: string } = {
   // 取得所有評論：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/comments
 
   // 新增一條評論：POST https://kuanjung.synology.me/wordpress/wp-json/wp/v2/comments
+  createCommentPost: '/wp-json/wp/v2/comments',
 
   // 取得指定評論：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/comments/{id}
 
@@ -101,6 +102,9 @@ const apiPaths: { [key: string]: string } = {
   // 取得所有主題：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/themes
 
   // 取得指定主題：GET https://kuanjung.synology.me/wordpress/wp-json/wp/v2/themes/{stylesheet}
+
+  //自製評論API 留言 https://kuanjung.synology.me/wordpress/wp-json/myplugin/v1/comments
+  createMyPluginPostsParams: '/wp-json/myplugin/v1/comments',
 }
 
 export { apiPaths }
