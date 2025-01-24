@@ -5,7 +5,7 @@
     </div>
     <div>
       <p class="font-black text-black text-center text-xl">{{ avatarTitle }}</p>
-      <p class="mt-10 text-black text-center">Front-End</p>
+      <p class="mt-10 text-black text-center page-title-font">Front-End</p>
     </div>
   </div>
   <a class="bottom-0 left-0 absolute flex justify-between items-center bg-white px-5 w-full h-[50px]" href="https://github.com/Gp3ShenQ" target="_blank" rel="noopener noreferrer">

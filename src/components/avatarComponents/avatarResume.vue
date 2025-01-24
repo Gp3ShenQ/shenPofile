@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col justify-center items-center w-full h-full">
     <div class="w-full h-2/5">
-      <p class="mt-5 font-black text-8xl text-black text-center leading-tight">Hello</p>
-      <p class="font-black text-3xl text-black text-center">Here's who I am & what I do</p>
+      <p class="mt-5 font-black text-8xl text-black text-center leading-tight title-font">Hello</p>
+      <p class="font-black text-3xl text-black text-center page-title-font">Here's who I am & what I do</p>
     </div>
     <div class="flex justify-center items-center gap-10 w-full h-1/5">
-      <div class="leading-10 button-gradient" @click="routerTo('resume')">RESUME</div>
-      <div class="leading-10 button-gradient">PROJECTS</div>
+      <div class="leading-10 button-gradient page-title-font" @click="routerTo('resume')">RESUME</div>
+      <div class="leading-10 button-gradient page-title-font" @click="routerTo('professional')">PROFESSIONAL</div>
     </div>
     <div class="px-12 pt-5 w-full h-2/5">
       <div v-html="avatarResume" class="text-black"></div>

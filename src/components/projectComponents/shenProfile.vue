@@ -1,5 +1,5 @@
 <template>
-  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Profile - Project</p>
+  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left page-title-font">Profile - Project</p>
   <div class="w-[600px]"></div>
 </template>
 

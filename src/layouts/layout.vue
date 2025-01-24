@@ -70,7 +70,18 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Delius+Unicase:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Delius+Swash+Caps&family=Delius+Unicase:wght@400;700&family=Diphylleia&display=swap');
+
+.title-font {
+  font-family: 'Delius Unicase', serif;
+}
+
+.page-title-font {
+  font-family: 'Diphylleia', serif;
+}
+
 .fade-enter-from {
   opacity: 0;
   transform: translateX(-30px);

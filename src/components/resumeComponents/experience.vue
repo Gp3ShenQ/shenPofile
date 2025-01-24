@@ -1,5 +1,5 @@
 <template>
-  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Experience</p>
+  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left page-title-font">Experience</p>
   <template v-for="item in job" :key="item.position">
     <div class="relative flex justify-center items-center bg-white shadow-[0_10px_20px_#00000050] mt-10 py-5 w-[600px] h-auto min-h-[350px]">
       <div class="flex flex-col justify-center items-center px-4 w-1/3 h-full">

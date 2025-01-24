@@ -1,5 +1,5 @@
 <template>
-  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left">Education</p>
+  <p class="border-[#d1d1e0] pt-20 pb-5 border-b-[3px] w-[600px] h-full text-3xl text-black text-left page-title-font">Education</p>
   <div class="flex justify-center items-center gap-16 mb-12">
     <template v-for="item in school" :key="item.position">
       <div class="relative flex justify-center items-center bg-white shadow-[0_10px_20px_#00000050] mt-10 w-[250px] h-[350px]">
