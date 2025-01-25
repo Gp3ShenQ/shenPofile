@@ -12,7 +12,7 @@
     <ul class="hamburger-input-links">
       <template v-for="item in aboutMeList">
         <li class="relative bg-[#C4A69D] m-2 p-2 rounded-1 text-black transition-all duration-500 cursor-pointer ease-in page-title-font" @click="changeButton(item.name)">
-          <div :class="{ buttonActive: item.name === resumeRoute }">{{ item.name }}</div>
+          <div :class="{ buttonActive: item.name === resumeRoute }">{{ item.title }}</div>
         </li>
       </template>
     </ul>
