@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col justify-center items-center w-full">
-    <div class="w-full h-2/5">
+  <div class="flex flex-col justify-center items-center max-l:px-4 w-full">
+    <div class="w-full">
       <p class="mt-5 font-black text-8xl text-black text-center max-l:text-6xl leading-tight title-font">Hello</p>
       <p class="font-black text-3xl text-black text-center page-title-font">Here's who I am & what I do</p>
     </div>
@@ -8,7 +8,7 @@
       <div class="leading-10 button-gradient page-title-font" @click="routerTo('resume')">RESUME</div>
       <div class="leading-10 button-gradient page-title-font" @click="routerTo('professional')">PROFESSIONAL</div>
     </div>
-    <div class="px-12 py-5">
+    <div class="px-12 max-l:px-5 py-2">
       <div v-html="avatarResume" class="text-black"></div>
     </div>
   </div>

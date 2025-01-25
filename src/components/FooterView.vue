@@ -16,8 +16,8 @@
         </a>
       </div>
     </div>
-    <div class="flex flex-col justify-center pr-4 w-auto text-black text-center">
-      <p class="page-title-font">© 2025 by Amos .</p>
+    <div class="flex items-end pr-5 max-l:pr-0 pb-5">
+      <p class="text-gray-500 page-title-font">© 2025 by Amos .</p>
     </div>
   </div>
 </template>
@@ -27,8 +27,6 @@ import {} from 'vue'
 import Swal from 'sweetalert2'
 import { storeToRefs } from 'pinia'
 import { useCommonStore } from '@/store/commonStore'
-
-import { copyText } from '@/utils/ustCopyText'
 
 const commonStore = useCommonStore()
 const { githubIcon, rightMessageStatus, sendEmailStatus } = storeToRefs(commonStore)
@@ -47,15 +45,12 @@ const messageOrCopy = () => {
   }).then((result) => {
     if (result.isConfirmed) {
       try {
-        // copyText('gp3g4xup6@gmail.com')
-        // Swal.fire({ title: '已複製', text: 'Email 已複製到剪貼簿' })
         sendEmailStatus.value = true
       } catch (err) {
         Swal.fire('錯誤', '無法複製 Email: ' + err, 'error')
       }
     } else if (result.isDenied) {
       rightMessageStatus.value = true
-      // Swal.fire('留言', '你可以在這裡留言。')
     }
   })
 }
