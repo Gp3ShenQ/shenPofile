@@ -1,21 +1,24 @@
 <template>
   <div class="flex flex-col justify-center items-center max-l:px-4 w-full">
     <div class="w-full">
-      <p class="mt-5 font-black text-8xl text-black text-center max-l:text-6xl leading-tight title-font">Hello</p>
-      <p class="font-black text-3xl text-black text-center page-title-font">Here's who I am & what I do</p>
+      <p class="mt-5 font-black text-black max-l:text-6xl text-8xl text-center leading-tight title-font">Hello</p>
+      <p class="font-black text-black text-3xl text-center page-title-font">Here's who I am & what I do</p>
     </div>
     <div class="flex justify-center items-center gap-10 my-5 w-full">
       <div class="leading-10 button-gradient page-title-font" @click="routerTo('resume')">RESUME</div>
       <div class="leading-10 button-gradient page-title-font" @click="routerTo('professional')">PROFESSIONAL</div>
     </div>
     <div class="px-12 max-l:px-5 py-2">
-      <div v-html="avatarResume" class="text-black"></div>
+      <div class="text-[18px] text-black page-title-font">
+        　　目前主要使用 Vue 框架開發，但起初公司是使用 Webpack，開發速度不理想。隨著我參與到 Vite 與 Tailwind CSS 和 TypeScript 的導入過程後，開發速度大幅增加，極大地提升了團隊的工作效率。在這過程中，我學習了現代前端框架如 Vue，也掌握了相關工具如
+        Pinia、Vue Router 以及各種 API 交互技術。
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import {} from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 import { useCommonStore } from '@/store/commonStore'
@@ -23,11 +26,6 @@ import { useCommonStore } from '@/store/commonStore'
 const router = useRouter()
 const commonStore = useCommonStore()
 const { resume } = storeToRefs(commonStore)
-
-const avatarResume = computed(() => {
-  const foundItem = resume.value.find((item: any) => item.content && item.content.rendered)
-  return foundItem ? foundItem.content.rendered : ''
-})
 
 const routerTo = (routerName: string) => {
   router.push({ name: routerName })

@@ -2,13 +2,13 @@
   <div class="top-0 left-0 z-20 fixed bg-white w-full h-full max-h-[140px]">
     <div class="flex justify-around items-center w-16 w-full h-full">
       <div @click="routerTo('aboutMe')">
-        <img class="w-16 h-16 cursor-pointer" :src="titleImage" alt="title" />
+        <img class="w-16 h-16 cursor-pointer" src="@/assets/topHeader/topHeader_shenQ_84x84.png" alt="title" />
       </div>
       <middleButton class="max-md:hidden" :aboutMeList="aboutMeList" :resumeRoute="resumeRoute" />
       <div class="flex items-center gap-5">
-        <svg class="w-8 h-8 cursor-pointer" @click="openFloatingArea('message')">
+        <!-- <svg class="w-8 h-8 cursor-pointer" @click="openFloatingArea('message')">
           <use href="#message_icon_small"></use>
-        </svg>
+        </svg> -->
         <svg class="w-8 h-8 cursor-pointer" @click="openFloatingArea('sendEmail')">
           <use class="fill-black" href="#send_email_icon"></use>
         </svg>
@@ -29,9 +29,7 @@ import smallMiddleButton from '@/components/topHeaderComponents/smallMiddleButto
 const route = useRoute()
 const router = useRouter()
 const commonStore = useCommonStore()
-const { topHeaderImage, rightMessageStatus, sendEmailStatus } = storeToRefs(commonStore)
-
-const titleImage = computed(() => topHeaderImage?.value.find((item: string) => item.includes('84x84')))
+const { rightMessageStatus, sendEmailStatus } = storeToRefs(commonStore)
 
 const aboutMeList = [
   {

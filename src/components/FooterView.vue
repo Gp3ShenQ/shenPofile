@@ -12,7 +12,7 @@
       <div class="flex flex-col justify-center gap-2">
         <p class="font-black page-title-font">Follow</p>
         <a href="https://github.com/Gp3ShenQ" target="_blank" rel="noopener noreferrer">
-          <img class="w-6 h-6 cursor-pointer" :src="githubIcon" alt="" />
+          <img class="w-6 h-6 cursor-pointer" src="@/assets/avatar_github.png" alt="" />
         </a>
       </div>
     </div>
@@ -29,7 +29,7 @@ import { storeToRefs } from 'pinia'
 import { useCommonStore } from '@/store/commonStore'
 
 const commonStore = useCommonStore()
-const { githubIcon, rightMessageStatus, sendEmailStatus } = storeToRefs(commonStore)
+const { rightMessageStatus, sendEmailStatus } = storeToRefs(commonStore)
 
 const svgDataUri = `<svg class="w-full h-full" aria-hidden="true"><use class="w-full h-full" xlink:href="#message_icon"/></svg>`
 
@@ -39,7 +39,8 @@ const messageOrCopy = () => {
     showDenyButton: true,
     showCancelButton: false,
     confirmButtonText: '留言到我的E-Mail',
-    denyButtonText: '我要留言',
+    // denyButtonText: '我要留言',
+    denyButtonText: '取消',
     buttonsStyling: false,
     iconHtml: svgDataUri,
   }).then((result) => {
@@ -49,9 +50,10 @@ const messageOrCopy = () => {
       } catch (err) {
         Swal.fire('錯誤', '無法複製 Email: ' + err, 'error')
       }
-    } else if (result.isDenied) {
-      rightMessageStatus.value = true
     }
+    // else if (result.isDenied) {
+    //   rightMessageStatus.value = true
+    // }
   })
 }
 </script>

@@ -28,7 +28,7 @@ import RightMessageAreaView from '@/components/RightMessageAreaView.vue'
 
 const commonStore = useCommonStore()
 const { func_getMediaGet, func_getAllDetailsGet, func_getArticlePosts } = useArticleApi()
-const { topHeaderImage, allAvatarDetails, avatarBackground, resume, githubIcon, tgQRCode } = storeToRefs(commonStore)
+const { topHeaderImage, allAvatarDetails, avatarBackground, resume } = storeToRefs(commonStore)
 
 type ImageItem = {
   guid: {
@@ -49,8 +49,6 @@ type Article = {
 const getTopHeaderImage = async () => {
   const _allImage = await func_getMediaGet()
   topHeaderImage.value = _allImage.map((item: ImageItem) => item.guid.rendered).filter((url: string) => url.includes('shen'))
-  githubIcon.value = _allImage.map((item: ImageItem) => item.guid.rendered).filter((url: string) => url.includes('avatar_github'))
-  tgQRCode.value = _allImage.map((item: ImageItem) => item.guid.rendered).filter((url: string) => url.includes('TG_QRcode'))
   avatarBackground.value = _allImage.map((item: ImageItem) => item.guid.rendered).filter((url: string) => url.includes('avatar_background'))
 }
 
