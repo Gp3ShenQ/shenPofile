@@ -32,7 +32,7 @@ const scene = ref<HTMLElement | null>(null)
 const skill = [
   {
     skillType: 'Vue.js',
-    skillList: [{ name: 'Vue3' }, { name: 'Vite' }, { name: 'Pinia' }, { name: 'Axios' }, { name: 'Vue-Router' }, { name: 'RESTful API' }, { name: '可重用組件開發' }],
+    skillList: [{ name: 'Vue3' }, { name: 'Vite' },{name:'Nuxt3'}, { name: 'Pinia' }, { name: 'Axios' }, { name: 'Vue-Router' }, { name: 'RESTful API' }, { name: '可重用組件開發' }],
   },
   {
     skillType: 'CSS',
@@ -46,6 +46,7 @@ const skill = [
     skillType: 'Other',
     skillList: [{ name: 'Git/GitHub/GitLab' }, { name: 'Internationalization (i18n)' }, { name: 'API Documentation (Swagger)' }],
   },
+
 ]
 
 const positionAll = (index: number) => {
