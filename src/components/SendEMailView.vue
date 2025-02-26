@@ -1,6 +1,6 @@
 <template>
   <template v-if="sendEmailStatus">
-    <div class="top-0 left-0 z-20 fixed flex justify-center items-center bg-black/40 p-5 w-full h-full" @click="closeSendEmail">
+    <div class="top-0 left-0 z-20 fixed flex justify-center items-center bg-black/40 p-5 w-full h-full">
       <div class="bg-white rounded-[30px] w-full max-w-[600px] overflow-hidden">
         <div class="flex items-center bg-[#DADADA] pl-4 w-full h-10">
           <template v-for="item in dot" :key="item">
