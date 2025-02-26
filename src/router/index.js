@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/pages/Home.vue'
 import Resume from '@/pages/Resume.vue'
-import Project from '@/pages/project.vue'
+import Project from '@/pages/Project.vue'
 import layout from '@/layouts/layout.vue'
 import Professional from '@/pages/Professional.vue'
 
